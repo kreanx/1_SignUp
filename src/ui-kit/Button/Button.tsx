@@ -1,3 +1,4 @@
+import Spinner from '../Spinner/Spinner'
 import { IButton } from '../types'
 import styles from './Button.module.scss'
 
@@ -10,6 +11,7 @@ const Button: React.FC<IButton> = (props) => {
 		className = styles.button,
 		value,
 		onClick,
+		loading,
 	} = props
 
 	return (
@@ -20,12 +22,12 @@ const Button: React.FC<IButton> = (props) => {
 					: `${className} ${styles.button}`
 			}
 			name={name}
-			disabled={disabled}
+			disabled={disabled || loading}
 			value={value}
 			onClick={onClick}
 			type={type}
 		>
-			{value}
+			{loading ? <Spinner /> : value}
 			{children}
 		</button>
 	)

@@ -8,6 +8,7 @@ interface IButton {
 	name?: string
 	value?: string
 	onClick?: () => void
+	loading?: boolean
 }
 
 interface IInput {
@@ -22,5 +23,4 @@ interface IInput {
 	showPassword?: boolean
 	validation?: (value: string) => string | undefined
 }
-
 export type { IButton, IInput }

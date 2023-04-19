@@ -1,5 +1,6 @@
 .home {
     margin-top: 110px;
+
     &__wrapper {
         margin: 0 auto;
         max-width: 1100px;
@@ -8,13 +9,111 @@
         gap: 80px;
     }
 
-    &__block {}
+    &__login {
+        margin-top: 28px;
+    }
 
-    &__topText {}
+    &__sign {
+        font-weight: 500;
+        font-size: 30px;
+        line-height: 45px;
+        color: #000000;
+    }
+
+    &__links {
+        display: flex;
+        justify-content: center;
+        margin-top: 45px;
+
+        img {
+            cursor: pointer;
+        }
+    }
+
+    &__register {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        text-align: center;
+        margin-top: 54px;
+        color: #B5B5B5;
+        cursor: pointer;
+    }
+
+    &__block {
+        &:nth-child(1) {
+            flex: 2;
+        }
+
+        &:nth-child(2) {
+            flex: 1;
+        }
+    }
+
+    &__title {
+        font-weight: 600;
+        font-size: 50px;
+        line-height: 75px;
+        color: #000000;
+    }
+
+    &__subtitle {
+        font-weight: 500;
+        font-size: 35px;
+        line-height: 52px;
+        color: #000000;
+    }
+
+    &__topText {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
 
     &__bottomContent {
-        &_text {}
+        margin-top: 53px;
+        position: relative;
 
-        &_img {}
+        &_text {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            color: #000000;
+
+            span {
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 24px;
+                color: #4D47C3;
+                cursor: pointer;
+            }
+        }
+
+        &_img {
+            position: absolute;
+            top: -70px;
+            right: 40px;
+        }
     }
+}
+
+@media screen and (max-width: 569px) {
+    .home {}
+}
+
+@media screen and (max-width: 997px) {
+    .home {
+        &__wrapper {
+            flex-direction: column;
+            gap: 53px;
+        }
+
+        &__bottomContent {
+            &_img {
+                display: none;
+            }
+        }
+    }
+
+
 }

@@ -1,8 +1,22 @@
 import styles from './Home.module.scss'
 import man from '../../assets/man.png'
+import google from '../../assets/google.svg'
 import Login from '../../components/Login/Login'
+import { useState } from 'react'
+import Registration from '../../components/Registration/Registration'
+// import Auth from '../../components/Auth/Auth'
 
 const Home: React.FC = () => {
+	const [signText, setSignText] = useState<string>('Sign in')
+
+	const handleRegister = () => {
+		if (signText === 'Sign up') {
+			setSignText('Sign in')
+		} else {
+			setSignText('Sign up')
+		}
+	}
+
 	return (
 		<section className={styles.home}>
 			<div className={styles.home__wrapper}>
@@ -13,9 +27,13 @@ const Home: React.FC = () => {
 					</div>
 					<div className={styles.home__bottomContent}>
 						<div className={styles.home__bottomContent_text}>
-							If you don’t have an account register
+							{signText === 'Sign in'
+								? ' If you already have an account '
+								: ' If you don’t have an account register'}
 							<br /> You can
-							<span>Register here !</span>
+							<span onClick={handleRegister}>
+								{signText === 'Sign in' ? ' Register here !' : ' Login here !'}
+							</span>
 						</div>
 						<div className={styles.home__bottomContent_img}>
 							<img src={man} alt="man" />
@@ -23,7 +41,15 @@ const Home: React.FC = () => {
 					</div>
 				</div>
 				<div className={styles.home__block}>
-					<Login />
+					<h3 className={styles.home__sign}>{signText}</h3>
+					<div className={styles.home__login}>
+						{signText === 'Sign in' ? <Login /> : <Registration />}
+					</div>
+					<p className={styles.home__register}>or continue with</p>
+					<div className={styles.home__links}>
+						<img src={google} alt="google" />
+					</div>
+					{/* <Auth /> */}
 				</div>
 			</div>
 		</section>

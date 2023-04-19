@@ -56,7 +56,13 @@ const Input: React.FC<IInput> = (props) => {
 			<label className={styles.input__label} htmlFor={inputId}>
 				{label}
 			</label>
-			<div className={styles.input__wrapper}>
+			<div
+				className={
+					className
+						? `${styles.input__wrapper} ${className}`
+						: styles.input__wrapper
+				}
+			>
 				<input
 					className={
 						className

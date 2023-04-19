@@ -28,6 +28,7 @@ const Login: React.FC = () => {
 				placeholder="Enter your email"
 				value={formData.email}
 				onChange={handleInputChange}
+				className={styles.login__input}
 			/>
 
 			<Input
@@ -38,6 +39,7 @@ const Login: React.FC = () => {
 				placeholder="Enter your password"
 				value={formData.password}
 				onChange={handleInputChange}
+				className={styles.login__input}
 			/>
 
 			<Button value="Submit" type="submit" />
