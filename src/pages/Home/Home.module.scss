@@ -1,0 +1,20 @@
+.home {
+    margin-top: 110px;
+    &__wrapper {
+        margin: 0 auto;
+        max-width: 1100px;
+        display: flex;
+        justify-content: space-between;
+        gap: 80px;
+    }
+
+    &__block {}
+
+    &__topText {}
+
+    &__bottomContent {
+        &_text {}
+
+        &_img {}
+    }
+}
